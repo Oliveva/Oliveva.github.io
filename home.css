@@ -1,34 +1,47 @@
-body{
-    background-color: wheat;
+.toph{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+.logo{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 1000;
+    padding: 0 3%;
 }
 nav{
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    height: 5vh;
-    left: 100px;;
-    width: 50vw;
-    border-radius: 1rem;
-    background-color: white;box-shadow: 0 5px 10px 0 rgb(77, 77, 77);
-
-}
-nav li:hover{
-    background-color: rgb(200, 180, 144);
-}
-nav li{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
+    width: 60%;
     height: 100%;
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
 }
-nav a{
-   
+
+li{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li a{
     text-decoration: none;
-    outline:none;
     color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li a:hover{
+    text-decoration: underline;
 }
