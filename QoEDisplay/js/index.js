@@ -331,19 +331,36 @@ function initChartData(pointData) {
     );
 
     mapChart.on('click', function (params) {
-      // 获取点击点的数据
       const pointData = params.data;
-      // 更新所有图表数据
+      const parentElements = document.querySelectorAll('.panel');
+      parentElements.forEach(parent => {
+          let staticPart;
+          if (parent.classList.contains('http')) {
+              staticPart = '网页浏览业务-';
+          } else if (parent.classList.contains('video')) {
+              staticPart = '视频播放业务-';
+          } else if (parent.classList.contains('im')) {
+              staticPart = '微信业务-';
+          } else if (parent.classList.contains('q')) {
+            staticPart = 'QoE-';
+          } else if (parent.classList.contains('pdf')) {
+            staticPart = '概率密度-';
+          } else {
+              staticPart = '权重-';
+          }
+          const childLabel = parent.querySelector('h2');
+          if (childLabel) {
+              childLabel.textContent = staticPart + pointData.name;
+          }
+      });
       initChartData(pointData);
     });
 
-    // 初始化时加载第一个点的数据
     initChartData(dataPackage.mapPoints[0]);
   });
 
   window.addEventListener('resize', function () {
     mapChart.resize();
-    // 同时调整所有图表大小
     Object.values(charts).forEach(chart => chart.resize());
   });
 })();
