@@ -230,7 +230,7 @@ function initChartData(pointData) {
 
 (function () {
   var mapChart = echarts.init(document.querySelector(".map .chart"));
-  $.get('https://geo.datav.aliyun.com/areas_v3/bound/320100_full.json', function (geoJson) {
+  $.get('js/320100.json', function (geoJson) {
     echarts.registerMap('Nanjing', geoJson);
     mapChart.setOption(
       (option = {
